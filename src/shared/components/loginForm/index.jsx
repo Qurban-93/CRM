@@ -1,5 +1,5 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { LoadingOutlined } from '@ant-design/icons';
+import { LoadingOutlined, EyeOutlined } from '@ant-design/icons';
 import { useLoginMutation } from "../../../redux/api/authApi";
 import { useNotification } from '../notification';
 import * as Yup from 'yup';
@@ -16,18 +16,20 @@ export const LoginForm = () => {
   const { contextHolder, openNotificationWithIcon } = useNotification();
 
   const showPassword = () => {
-    document.querySelector(".password").type === "password" ?
-      document.querySelector(".password").type = "text" :
+    if (document.querySelector(".password").type === "password") {
+      document.querySelector(".password").type = "text"
+    } else {
       document.querySelector(".password").type = "password";
+    }
+
   }
 
   const validation = Yup.object({
     email: Yup.string()
-      .min(2, 'Минимум 2 символа для заполнения')
-      .required('Обязательное поле!'),
+      .required('Required field!').email('Not valid Email pattern'),
     password: Yup.string()
-      .min(2, 'Минимум 10 символа для заполнения')
-      .required('Обязательное поле!')
+      .min(8, 'Password length minimum 8')
+      .required('Required field!')
   });
 
 
@@ -56,12 +58,13 @@ export const LoginForm = () => {
             <h1>Login Form</h1>
             <Form action="">
               <label htmlFor="">User Email</label>
+
               <Field className="userName" name="email" type="text" placeholder="Enter email" />
               <ErrorMessage component="div" className="error" name="email" />
               <label htmlFor="">Password</label>
               <div className="password-input">
                 <Field className="password" name="password" type="password" placeholder="Enter password" />
-                <i onClick={showPassword} className="fa-solid fa-eye"></i>
+                <i className='show-icon' onClick={showPassword}><EyeOutlined /></i>
               </div>
               <ErrorMessage component="div" className="error" name="password" />
               <div className="rememmber-me-forgot-password">
