@@ -1,0 +1,27 @@
+.project-table {
+    padding: 20px 40px;
+}
+
+
+.active-user-btn,
+.deactive-user-btn {
+    background-color: #F6FFED;
+    color: #87D068;
+    border: 1px solid #87D068;
+    padding: 5px 15px !important;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 70%;
+
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}
+
+.deactive-user-btn {
+    background-color: #FFF2F0;
+    color: #FF6365;
+    border: 1px solid #FF6365;
+}

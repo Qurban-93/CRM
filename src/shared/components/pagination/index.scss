@@ -1,0 +1,34 @@
+.pagination {
+
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        width: 45%;
+        margin: auto;
+        list-style: none;
+
+        li {
+            border-radius: 10px;
+            padding: 12px 25px;
+            cursor: pointer;
+            color: #000;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 0 5px;
+            color: white;
+        }
+
+        .current-page {
+            background: #B88E2F;
+            color: white;
+        }
+    }
+
+}

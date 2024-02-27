@@ -1,0 +1,24 @@
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        text-align: start;
+        font-size: 30px;
+        width: 49%;
+    }
+
+    .user-table-btns {
+        text-align: end;
+        padding: 20px !important;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 12%;
+
+        button {
+            margin: 0 5px;
+        }
+    }
+}

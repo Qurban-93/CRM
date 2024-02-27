@@ -1,0 +1,49 @@
+.ant-layout-header {
+    padding: 0 !important;
+}
+
+.ant-btn {
+    padding: 0 15px;
+}
+
+.anticon-user {
+    font-size: 20px !important;
+}
+
+.user-info {
+    margin-right: 30px;
+}
+
+button {
+    font-size: 20px !important;
+}
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: -1px 1px 56px -3px rgba(0, 0, 0, 0.59);
+    -webkit-box-shadow: -1px 1px 56px -3px rgba(0, 0, 0, 0.59);
+    -moz-box-shadow: -1px 1px 56px -3px rgba(0, 0, 0, 0.59);
+
+    img {
+        width: 10%;
+    }
+
+    .collapse-btn {
+        outline: none;
+        margin-left: 10px;
+
+        &:focus {
+            border: none;
+        }
+    }
+
+    .anticon-menu-fold,
+    .anticon-menu-unfold {
+        font-size: 25px !important;
+    }
+}

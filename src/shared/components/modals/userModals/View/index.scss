@@ -1,0 +1,28 @@
+.user-view-section {
+    text-align: start !important;
+
+    ul {
+        list-style: none;
+
+        li {
+            font-size: 15px !important;
+            margin: 10px 0;
+        }
+    }
+
+    h3 {
+        margin-top: 15px;
+        text-align: start;
+        font-weight: bold;
+        font-size: 20px;
+        color: #0275d8;
+    }
+
+    p {
+        margin: 10px 0;
+    }
+
+    .count {
+        color: #f0ad4e;
+    }
+}

@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+}
+
+.project-table {
+    padding: 20px 40px;
+}
+
+.project-info-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: blue;
+}
+
+.project-table-btns {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 20px 20px;
+}
+
+.ant-table-wrapper {
+    -webkit-box-shadow: 7px 14px 56px -9px rgba(112, 112, 112, 1);
+    -moz-box-shadow: 7px 14px 56px -9px rgba(112, 112, 112, 1);
+    box-shadow: 7px 14px 56px -9px rgba(112, 112, 112, 1);
+}
