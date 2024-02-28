@@ -37,7 +37,6 @@ export const RaportTable = () => {
         useGetAdminRaportQuery(`?Skip=${(curretntPage - 1) * take}&Take=${take}` + filters);
     const totalPages = !isLoading ? Math.ceil(raportsData.totalCount / take) : 1
 
-    console.log(raportsData);
 
     const transformedDataForTable = useMemo(() => {
         return raportsData?.reports.map(item => ({

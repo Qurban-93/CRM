@@ -25,7 +25,7 @@ export const UsersTable = () => {
     const { data: userData, isLoading, isFetching } =
         useGetAllUsersQuery(`?Skip=${(current - 1) * take}&Take=${take}` + filters);
 
-    const totalPages = !isLoading ? Math.ceil(userData.totalCount / take) : 1
+    const totalPages = !isLoading ? Math.ceil(userData?.totalCount / take) : 1
 
     const columns = [
         {
@@ -143,7 +143,6 @@ export const UsersTable = () => {
 
     const onChangeStatus = async (object) => {
         const newStatus = { id: object.id, isActive: !object.isActive };
-        console.log(newStatus);
         const resp = await changeUserStatus(newStatus);
         if (resp.error) {
             openNotificationWithIcon('error', "Something goes wrong!");

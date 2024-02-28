@@ -50,9 +50,7 @@ export const EditModal = ({ openNotificationWithIcon, selectedRaportId, setSelec
     };
 
     const onFinish = async (values) => {
-        console.log({ ...values, id: selectedRaportId });
         const resp = await editRaport({ ...values, id: selectedRaportId });
-        console.log(resp);
         if (resp.error) {
             openNotificationWithIcon('error', `${resp.error.data.message}`)
             return;

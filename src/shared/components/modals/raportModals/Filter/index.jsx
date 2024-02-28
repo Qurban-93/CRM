@@ -23,7 +23,6 @@ export const FilterModal = ({ setFilters }) => {
         if (role === 'Employee') {
             setProjects(userData?.projects);
         } else {
-            console.log('else');
             setProjects(projectsData?.projects);
         }
     }, [userData, projectsData]);
@@ -54,7 +53,7 @@ export const FilterModal = ({ setFilters }) => {
     const onFinish = (value) => {
         const fullName = value.fullName ? value.fullName.trim() : '';
         const startDate = value.startDate ? value.startDate : '';
-        const endDate = value.endDate ? value.startDate : '';
+        const endDate = value.endDate ? value.endDate : '';
         let path = `&SearchByFullname=${fullName}&StartDate=${startDate}&EndDate=${endDate}`;
 
         if (value.projectId) {

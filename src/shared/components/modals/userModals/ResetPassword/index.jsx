@@ -32,7 +32,6 @@ const ResetPassword = ({ openNotificationWithIcon, selectedUserId, setSelectedUs
             openNotificationWithIcon('error', 'New password dont match with confirm password!');
             return;
         }
-        console.log({ ...values, userId: selectedUserId });
         const data = { ...values, userId: selectedUserId };
         const resp = await resetUserPassword(data);
         if (resp.error != null) {

@@ -29,7 +29,6 @@ export const ChangePassword = ({ openNotificationWithIcon, isChangePasswordModal
         }
 
         const resp = await changeUserPassword(values);
-        console.log(resp);
         if (resp.error != null) {
             openNotificationWithIcon('error', `${resp.error.data.message}`);
             return;

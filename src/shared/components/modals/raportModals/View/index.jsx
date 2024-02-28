@@ -12,7 +12,6 @@ export const RaportView = ({ selectedRaportId }) => {
     const { modalsState } = useSelector(state => state.modalsSlice);
     const { isViewModalOpen } = modalsState;
 
-    console.log(raport, selectedRaportId);
     return (
         <Drawer
             className='project-view-section'
