@@ -63,7 +63,7 @@ export const ForgotPasswordForm = () => {
     </div>
   </Formik> : null
 
-  const secondContent = step === 2 ? <Otp setStep={setStep} /> : null
+  const secondContent = step === 2 ? <Otp setStep={setStep} email={email} /> : null
   const thirdConten = step === 3 ? <NewPasswordForm email={email} /> : null
 
   return (

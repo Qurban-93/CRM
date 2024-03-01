@@ -159,8 +159,8 @@ const CreateModal = ({ openNotificationWithIcon }) => {
                         placeholder="Select team"
                     >
                         <Option key={0} >---</Option>
-                        {teamsData?.teams.map((item, index) => (
-                            <Option key={index} value={item.id}>{item.teamName}</Option>
+                        {teamsData?.teams.map((item) => (
+                            <Option key={item.id} value={item.id}>{item.teamName}</Option>
                         ))}
                     </Select>
                 </Form.Item>

@@ -5,7 +5,7 @@ import { useSendOtpMutation } from '@/redux/api/authApi';
 import { useNotification } from '../notification';
 
 
-const Otp = ({ setStep }) => {
+const Otp = ({ setStep, email }) => {
     const { contextHolder, openNotificationWithIcon } = useNotification();
     const [seconds, setSeconds] = useState(5 * 60);
     const [form] = Form.useForm();
@@ -29,7 +29,10 @@ const Otp = ({ setStep }) => {
 
     const handleOtpFinish = async (values) => {
         if (seconds === 0) { alert('Time finish !'); return }
-        const data = { ...values, otpCode: values.otpCode.reduce((total, item) => (total + item)) }
+        const data = {
+            otpCode: values.otpCode.reduce((total, item) => (total + item)),
+            email: email
+        }
         const resp = await sendOtp(data);
 
         if (resp.error) {

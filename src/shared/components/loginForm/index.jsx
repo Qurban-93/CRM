@@ -34,6 +34,7 @@ export const LoginForm = () => {
 
 
   const onSubmitLogin = async (values) => {
+    console.log(values);
     const resp = await login(values);
 
     if (resp.error) {
