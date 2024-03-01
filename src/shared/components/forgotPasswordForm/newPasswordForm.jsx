@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useNotification } from '../notification';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { usePasswordConfirmationMutation } from "../../../redux/api/authApi";
+import { usePasswordConfirmationMutation } from "@/redux/api/authApi";
 
 import * as Yup from 'yup';
 import "./index.scss";

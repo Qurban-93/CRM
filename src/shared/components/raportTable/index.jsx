@@ -4,19 +4,20 @@ import { useSelector, useDispatch } from 'react-redux';
 import { EditOutlined, EyeOutlined } from '@ant-design/icons';
 import { EditModal, CreateModal, FilterModal, RaportView } from '../modals/raportModals';
 import { CreateFilterButtons } from '../createFilterButtons';
-import { useGetAdminRaportQuery, useGetUserRaportsQuery } from '../../../redux/api/raportApi';
+import { useGetAdminRaportQuery, useGetUserRaportsQuery } from '@/redux/api/raportApi';
 import { useNotification } from '../notification/index';
-import { setViewModal, setEditModal } from '../../../redux/features/modals/modalsSlice';
+import { setViewModal, setEditModal } from '@/redux/features/modals/modalsSlice';
 
 
 
 import './index.scss';
 
 
+
 export const RaportTable = () => {
     const isDatePassed = (dateString) => {
         const parts = dateString.split('-');
-        const date = new Date(parts[2], parts[1] - 1, parts[0]); // parts[2] - год, parts[1] - месяц, parts[0] - день
+        const date = new Date(parts[2], parts[1] - 1, parts[0]);
         date.setHours(23);
         date.setMinutes(59);
         date.setSeconds(59);
@@ -35,7 +36,23 @@ export const RaportTable = () => {
     const { data: raportsData, isFetching, isLoading } = checkRole ?
         useGetUserRaportsQuery(`?Skip=${(curretntPage - 1) * take}&Take=${take}` + filters) :
         useGetAdminRaportQuery(`?Skip=${(curretntPage - 1) * take}&Take=${take}` + filters);
-    const totalPages = !isLoading ? Math.ceil(raportsData.totalCount / take) : 1
+    const totalPages = !isLoading ? Math.ceil(raportsData?.totalCount / take) : 1;
+
+    const downloadExcelFile = () => {
+        const excellfilter = filters.length > 0 ? '?' + `${filters.slice(1)}` : ''
+        const fileUrl = `http://crocusoftcrm-001-site1.anytempurl.com/report/export-to-excel${excellfilter}`;
+
+
+        const link = document.createElement('a');
+        link.href = fileUrl;
+
+        link.setAttribute('download', 'Reports.xlsx');
+        link.setAttribute('type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
 
     const transformedDataForTable = useMemo(() => {
@@ -142,7 +159,7 @@ export const RaportTable = () => {
 
     return (
         <>
-            <CreateFilterButtons title={'Raports list'} />
+            <CreateFilterButtons title={'Raports list'} downloadExcelFile={downloadExcelFile} />
             <CreateModal openNotificationWithIcon={openNotificationWithIcon} />
             <FilterModal setFilters={setFilters} />
             {table}

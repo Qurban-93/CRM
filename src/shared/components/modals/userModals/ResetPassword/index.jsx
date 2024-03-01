@@ -1,7 +1,7 @@
 import { Form, Input, Select, Space, Button } from 'antd';
 import { Modal } from 'antd';
-import { useResetUserPasswordMutation } from '../../../../../redux/api/userApi';
-import { setResetPasswordModal } from '../../../../../redux/features/modals/modalsSlice';
+import { useResetUserPasswordMutation } from '@/redux/api/userApi';
+import { setResetPasswordModal } from '@/redux/features/modals/modalsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const ResetPassword = ({ openNotificationWithIcon, selectedUserId, setSelectedUserId }) => {

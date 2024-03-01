@@ -1,7 +1,7 @@
 import { Modal, Skeleton } from 'antd'
-import { useGetTeamByIdQuery, useDeleteTeamMutation } from '../../../../../redux/api/teamsApi';
+import { useGetTeamByIdQuery, useDeleteTeamMutation } from '@/redux/api/teamsApi';
 import { useSelector, useDispatch } from 'react-redux';
-import { setDeleteModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setDeleteModal } from '@/redux/features/modals/modalsSlice';
 
 
 export const DeleteModal = ({ selectedTeamId, setSelectedTeamId, setIsDeleteModalOpen, openNotificationWithIcon }) => {

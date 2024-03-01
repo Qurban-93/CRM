@@ -1,4 +1,4 @@
-import { UsersTable } from "../../shared/components/usersTable/"
+import { UsersTable } from "@/shared/components/usersTable/"
 
 const AppUsersPage = () => {
     return (

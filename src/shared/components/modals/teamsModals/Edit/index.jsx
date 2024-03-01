@@ -1,9 +1,9 @@
 import { LoadingOutlined } from '@ant-design/icons';
 import { Modal, Form, Input, Space, Button, Skeleton } from 'antd';
 import { useEffect } from 'react';
-import { useGetTeamByIdQuery, useEditTeamMutation } from '../../../../../redux/api/teamsApi';
+import { useGetTeamByIdQuery, useEditTeamMutation } from '@/redux/api/teamsApi';
 import { useSelector, useDispatch } from 'react-redux';
-import { setEditModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setEditModal } from '@/redux/features/modals/modalsSlice';
 import './index.scss';
 
 

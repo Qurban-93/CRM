@@ -1,8 +1,8 @@
 import { Modal, Form, Input, Select, Space, Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
-import { useCreateProjectMutation } from '../../../../../redux/api/projectsApi';
-import { useGetAllUsersQuery } from '../../../../../redux/api/userApi';
-import { setCreateModal } from '../../../../../redux/features/modals/modalsSlice';
+import { useCreateProjectMutation } from '@/redux/api/projectsApi';
+import { useGetAllUsersQuery } from '@/redux/api/userApi';
+import { setCreateModal } from '@/redux/features/modals/modalsSlice';
 
 
 export const CreateModal = ({ openNotificationWithIcon }) => {

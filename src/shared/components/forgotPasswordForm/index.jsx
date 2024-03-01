@@ -2,7 +2,7 @@ import Otp from './otp';
 import { NewPasswordForm } from './newPasswordForm';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { useSendEmailMutation } from "../../../redux/api/authApi";
+import { useSendEmailMutation } from "@/redux/api/authApi";
 import { useNotification } from '../notification';
 import { Link } from 'react-router-dom';
 import { useState } from "react";

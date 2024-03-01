@@ -2,10 +2,10 @@ import { useDispatch } from 'react-redux';
 import { Skeleton, Table } from 'antd';
 import { useNotification } from '../notification';
 import { useMemo, useState } from 'react';
-import { useGetAllTeamsQuery } from '../../../redux/api/teamsApi';
+import { useGetAllTeamsQuery } from '@/redux/api/teamsApi';
 import { CreateFilterButtons } from '../createFilterButtons';
 import { EditOutlined, DeleteOutlined, EyeOutlined } from '@ant-design/icons';
-import { setDeleteModal, setEditModal, setViewModal } from '../../../redux/features/modals/modalsSlice';
+import { setDeleteModal, setEditModal, setViewModal } from '@/redux/features/modals/modalsSlice';
 import { EditModal, CreateModal, DeleteModal, ProjectView } from '../modals/teamsModals';
 
 import './index.scss';

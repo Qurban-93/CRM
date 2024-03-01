@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { setEditModal } from '../../../../../redux/features/modals/modalsSlice';
-import { useGetAllTeamsQuery } from '../../../../../redux/api/teamsApi';
+import { setEditModal } from '@/redux/features/modals/modalsSlice';
+import { useGetAllTeamsQuery } from '@/redux/api/teamsApi';
 import { useSelector, useDispatch } from 'react-redux';
 import { Modal, Form, Input, Select, Space, Button, Skeleton } from 'antd';
-import { useGetUserByIdQuery, useGetUserRolesQuery, useEditUserMutation } from '../../../../../redux/api/userApi';
+import { useGetUserByIdQuery, useGetUserRolesQuery, useEditUserMutation } from '@/redux/api/userApi';
 
 
 import './index.scss';
@@ -24,6 +24,7 @@ const UserEditModal = ({ selectedUserId, setSelectedUserId, openNotificationWith
     }, [user]);
 
     const handleCancel = () => {
+        form.resetFields();
         dispatch(setEditModal(false));
         setSelectedUserId(null);
     };
@@ -62,7 +63,6 @@ const UserEditModal = ({ selectedUserId, setSelectedUserId, openNotificationWith
             return;
         }
         openNotificationWithIcon('success', 'Edited successfully!')
-        setSelectedUserId(null);
         handleCancel();
 
     };

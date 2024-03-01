@@ -1,14 +1,14 @@
 import { Suspense, useEffect, useState } from 'react';
-import { AppHeader } from '../../layout/Header/';
-import { AppSideBarMenu } from '../../layout/SideMenu/';
 import { useSelector } from 'react-redux';
 import { Layout, Spin } from 'antd';
 import { useNavigate, useRoutes } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
-import routes from '../../../router/routes';
-import PrivateRouter from '../../../pages/PrivateRouter';
 import RenderIf from '../RenderIf/RenderIf';
 import './app.scss';
+import { AppSideBarMenu } from 'shared/layout/SideMenu';
+import PrivateRouter from 'pages/PrivateRouter';
+import routes from 'router/routes';
+import { AppHeader } from 'shared/layout/Header';
 
 
 

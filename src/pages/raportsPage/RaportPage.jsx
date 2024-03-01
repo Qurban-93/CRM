@@ -1,4 +1,4 @@
-import { RaportTable } from '../../shared/components/raportTable';
+import { RaportTable } from '@/shared/components/raportTable';
 
 const RaportPage = () => {
     return (

@@ -1,7 +1,7 @@
 import { Drawer, Space, Select, Input, Form, Button, Spin } from 'antd';
-import { useGetAllTeamsQuery } from '../../../../../redux/api/teamsApi';
-import { useGetAllProjectsQuery } from '../../../../../redux/api/projectsApi';
-import { setFilterModal } from '../../../../../redux/features/modals/modalsSlice';
+import { useGetAllTeamsQuery } from '@/redux/api/teamsApi';
+import { useGetAllProjectsQuery } from '@/redux/api/projectsApi';
+import { setFilterModal } from '@/redux/features/modals/modalsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 

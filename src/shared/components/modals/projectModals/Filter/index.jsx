@@ -1,6 +1,6 @@
 import { Drawer, Space, Input, Form, Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilterModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setFilterModal } from '@/redux/features/modals/modalsSlice';
 import './index.scss'
 
 export const FilterModal = ({ setFilterValue, filterValue }) => {

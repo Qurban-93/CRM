@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { Modal } from 'antd';
 import { Form, Space, Button, Skeleton } from 'antd';
-import { useGetRaportByIdQuery, useEditRaportMutation } from '../../../../../redux/api/raportApi';
+import { useGetRaportByIdQuery, useEditRaportMutation } from '@/redux/api/raportApi';
 import { useSelector, useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
 import './index.scss';
-import { setEditModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setEditModal } from '@/redux/features/modals/modalsSlice';
 
 
 export const EditModal = ({ openNotificationWithIcon, selectedRaportId, setSelectedRaportId }) => {

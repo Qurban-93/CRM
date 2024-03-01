@@ -1,6 +1,6 @@
 import { Form, Input, Space, Button, Skeleton } from 'antd';
 import { Modal } from 'antd';
-import { useChangeUserPasswordMutation } from '../../../../../redux/api/userApi';
+import { useChangeUserPasswordMutation } from '@/redux/api/userApi';
 
 export const ChangePassword = ({ openNotificationWithIcon, isChangePasswordModalOpen, setIsChangePasswordModalOpen }) => {
     const [changeUserPassword] = useChangeUserPasswordMutation();

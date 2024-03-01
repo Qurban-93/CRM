@@ -3,9 +3,9 @@ import { useNotification } from '../notification';
 import { Table, Skeleton, Pagination } from 'antd';
 import { useMemo, useState } from 'react';
 import { CreateFilterButtons } from '../createFilterButtons';
-import { useGetAllProjectsQuery } from '../../../redux/api/projectsApi';
+import { useGetAllProjectsQuery } from '@/redux/api/projectsApi';
 import { EditOutlined, EyeOutlined } from '@ant-design/icons';
-import { setEditModal, setViewModal } from '../../../redux/features/modals/modalsSlice';
+import { setEditModal, setViewModal } from '@/redux/features/modals/modalsSlice';
 import { EditModal, CreateModal, FilterModal, ProjectView } from '../modals/projectModals';
 
 import './index.scss';
@@ -22,8 +22,8 @@ export const ProjectTable = () => {
     const { data: data, isLoading, isFetching } =
         useGetAllProjectsQuery(filterValue + `&Skip=${take * (current - 1)}&Take=${take}`);
 
-    const totalPages = !isLoading ? Math.ceil(data.totalCount / take) : 1
-
+    const totalPages = !isLoading ? Math.ceil(data?.totalCount / take) : 1
+    console.log(data);
 
     const transformDataForTable = useMemo(() => {
         return data?.projects.map(item => ({

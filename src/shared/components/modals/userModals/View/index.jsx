@@ -1,7 +1,7 @@
 import { Drawer, Skeleton } from 'antd';
-import { useGetUserByIdQuery } from '../../../../../redux/api/userApi';
+import { useGetUserByIdQuery } from '@/redux/api/userApi';
 import { useSelector, useDispatch } from 'react-redux';
-import { setViewModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setViewModal } from '@/redux/features/modals/modalsSlice';
 
 import './index.scss';
 

@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { logOutUser } from "../../../redux/features/user/userSlice"
+import { logOutUser } from "@/redux/features/user/userSlice"
 import { Layout, Button, Space, Dropdown } from 'antd';
-import { useNotification } from "../../components/notification";
-import { ChangePassword } from '../../components/modals/userModals/ChangePassword';
 import {
     MenuFoldOutlined,
     UnlockOutlined,
@@ -13,6 +11,8 @@ import {
 } from '@ant-design/icons';
 
 import "./index.scss"
+import { useNotification } from "shared/components/notification";
+import { ChangePassword } from "shared/components/modals/userModals/ChangePassword";
 
 export const AppHeader = ({ collapsed, setCollapsed, colorBgContainer, user }) => {
 

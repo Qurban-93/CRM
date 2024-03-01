@@ -1,9 +1,9 @@
 import { Form, Input, Select, Space, Button } from 'antd';
 import React from 'react'
 import { Modal } from 'antd';
-import { useCreateTeamMutation } from '../../../../../redux/api/teamsApi';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCreateModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setCreateModal } from 'redux/features/modals/modalsSlice';
+import { useCreateTeamMutation } from 'redux/api/teamsApi';
 
 export const CreateModal = ({ openNotificationWithIcon }) => {
 

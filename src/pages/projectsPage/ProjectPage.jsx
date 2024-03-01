@@ -1,4 +1,4 @@
-import { ProjectTable } from "../../shared/components/projectTable/";
+import { ProjectTable } from "@/shared/components/projectTable/";
 
 
 const ProjectPage = () => {

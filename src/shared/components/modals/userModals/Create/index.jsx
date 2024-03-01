@@ -1,8 +1,8 @@
-import { setCreateModal } from '../../../../../redux/features/modals/modalsSlice';
-import { useGetAllTeamsQuery } from '../../../../../redux/api/teamsApi';
+import { setCreateModal } from '@/redux/features/modals/modalsSlice';
+import { useGetAllTeamsQuery } from '@/redux/api/teamsApi';
 import { useSelector, useDispatch } from 'react-redux';
 import { Modal, Form, Input, Select, Space, Button } from 'antd';
-import { useCreateUserMutation, useGetUserRolesQuery } from '../../../../../redux/api/userApi';
+import { useCreateUserMutation, useGetUserRolesQuery } from '@/redux/api/userApi';
 
 const CreateModal = ({ openNotificationWithIcon }) => {
     const dispatch = useDispatch();
@@ -158,6 +158,7 @@ const CreateModal = ({ openNotificationWithIcon }) => {
                     <Select
                         placeholder="Select team"
                     >
+                        <Option key={0} >---</Option>
                         {teamsData?.teams.map((item, index) => (
                             <Option key={index} value={item.id}>{item.teamName}</Option>
                         ))}

@@ -59,5 +59,5 @@ export const {
     useGetUserRaportsQuery,
     useCreateRaportMutation,
     useGetRaportByIdQuery,
-    useEditRaportMutation,
+    useEditRaportMutation
 } = raportApi;

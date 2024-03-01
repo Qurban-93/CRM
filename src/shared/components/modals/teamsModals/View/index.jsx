@@ -1,8 +1,8 @@
 import { Drawer, Skeleton } from 'antd';
-import { useGetTeamByIdQuery } from '../../../../../redux/api/teamsApi';
+import { useGetTeamByIdQuery } from '@/redux/api/teamsApi';
 import './index.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { setViewModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setViewModal } from '@/redux/features/modals/modalsSlice';
 
 export const ProjectView = ({ setSelectedTeamId, selectedTeamId }) => {
 

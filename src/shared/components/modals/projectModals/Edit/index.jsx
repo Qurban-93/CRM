@@ -1,12 +1,10 @@
 import { Modal } from 'antd';
 import { Form, Input, Select, Space, Button, Skeleton } from 'antd';
 import { useEffect } from 'react';
-import { useGetProjectByIdQuery, useEditProjectMutation } from '../../../../../redux/api/projectsApi';
-import { useGetAllUsersQuery } from '../../../../../redux/api/userApi';
+import { useGetProjectByIdQuery, useEditProjectMutation } from '@/redux/api/projectsApi';
+import { useGetAllUsersQuery } from '@/redux/api/userApi';
 import { useDispatch, useSelector } from 'react-redux';
-import { setEditModal } from '../../../../../redux/features/modals/modalsSlice'
-
-
+import { setEditModal } from "@/redux/features/modals/modalsSlice"
 
 import './index.scss';
 
@@ -53,7 +51,9 @@ export const EditModal = ({ selectedProjectId, setSelectedProjectId, openNotific
 
     const onFinish = async (values) => {
 
+        console.log(values);
         const data = { ...values, id: selectedProjectId };
+
         const resp = await editProject(data);
 
         if (resp.error) {
@@ -106,7 +106,7 @@ export const EditModal = ({ selectedProjectId, setSelectedProjectId, openNotific
                     </Form.Item>
 
                     <Form.Item
-                        name="users"
+                        name="userIds"
                         label="Users"
                         rules={[
                             {

@@ -1,4 +1,4 @@
-import { TeamsTable } from '../../shared/components/teamsTable';
+import { TeamsTable } from '@/shared/components/teamsTable';
 
 const TeamsPage = () => {
     return (

@@ -1,7 +1,7 @@
 import { InputOTP } from 'antd-input-otp';
 import { useState, useEffect } from "react";
 import { Button, Form } from "antd";
-import { useSendOtpMutation } from '../../../redux/api/authApi';
+import { useSendOtpMutation } from '@/redux/api/authApi';
 import { useNotification } from '../notification';
 
 
@@ -17,6 +17,8 @@ const Otp = ({ setStep }) => {
         }, 1000) : 0;
         return () => clearInterval(interval);
     }, [seconds])
+
+    console.log('render');
 
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);

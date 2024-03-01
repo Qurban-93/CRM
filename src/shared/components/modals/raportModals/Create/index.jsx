@@ -1,8 +1,8 @@
 import { Modal, Form, Input, Select, Space, Button, } from 'antd';
-import { useGetUserByIdQuery } from '../../../../../redux/api/userApi';
-import { useCreateRaportMutation } from '../../../../../redux/api/raportApi';
+import { useGetUserByIdQuery } from '@/redux/api/userApi';
+import { useCreateRaportMutation } from '@/redux/api/raportApi';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCreateModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setCreateModal } from '@/redux/features/modals/modalsSlice';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 

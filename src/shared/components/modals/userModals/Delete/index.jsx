@@ -1,7 +1,7 @@
 import { Modal, Skeleton } from 'antd'
-import { setDeleteModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setDeleteModal } from '@/redux/features/modals/modalsSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { useGetUserByIdQuery, useDeleteUserMutation } from '../../../../../redux/api/userApi';
+import { useGetUserByIdQuery, useDeleteUserMutation } from '@/redux/api/userApi';
 
 
 const UserDeleteModal = ({ selectedUserId, setSelectedUserId, openNotificationWithIcon }) => {

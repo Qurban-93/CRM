@@ -2,12 +2,12 @@ import { FilterOutlined, PrinterOutlined } from '@ant-design/icons';
 import { Tooltip, Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { setCreateModal, setFilterModal } from '../../../redux/features/modals/modalsSlice'
+import { setCreateModal, setFilterModal } from '@/redux/features/modals/modalsSlice'
 
 import './index.scss';
 
 
-export const CreateFilterButtons = ({ title }) => {
+export const CreateFilterButtons = (props) => {
 
     const dispatch = useDispatch();
     const { user } = useSelector(state => state.userSlice);
@@ -39,10 +39,10 @@ export const CreateFilterButtons = ({ title }) => {
             </Button>
         </Tooltip>
 
-    const exportExcellBtn = currentPageName === 'raports' || currentPageName === '' && user.profile.role.name === 'Employee' ?
+    const exportExcellBtn = currentPageName === 'raports' ?
         <Tooltip placement="topLeft" title={'Export Excell'}>
             <Button
-                onClick={() => dispatch(setFilterModal(true))}
+                onClick={() => { props.downloadExcelFile ? props.downloadExcelFile() : null }}
                 type="primary">
                 <PrinterOutlined />
             </Button>
@@ -51,7 +51,7 @@ export const CreateFilterButtons = ({ title }) => {
 
     return (
         <div className="table-header">
-            <h1>{title}</h1>
+            <h1>{props.title}</h1>
             <div className='user-table-btns'>
                 {exportExcellBtn}
                 {filterBtn}

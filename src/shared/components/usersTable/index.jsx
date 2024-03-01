@@ -3,9 +3,9 @@ import { useMemo, useState } from 'react';
 import { CreateFilterButtons } from '../createFilterButtons';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table, Skeleton, Pagination } from 'antd';
-import { useGetAllUsersQuery, useChangeUserStatusMutation } from '../../../redux/api/userApi';
+import { useGetAllUsersQuery, useChangeUserStatusMutation } from '@/redux/api/userApi';
 import { EditOutlined, DeleteOutlined, UnlockOutlined, EyeOutlined } from '@ant-design/icons';
-import { setDeleteModal, setEditModal, setResetPasswordModal, setViewModal } from '../../../redux/features/modals/modalsSlice';
+import { setDeleteModal, setEditModal, setResetPasswordModal, setViewModal } from '@/redux/features/modals/modalsSlice';
 import { EditModal, DeleteModal, CreateModal, FilterModal, UserView, ResetPassword } from '../modals/userModals';
 
 import './index.scss';
@@ -179,7 +179,7 @@ export const UsersTable = () => {
         className='table'
         columns={columns}
         dataSource={transformedUserDataForTable}
-        scroll={{ y: 400, x: 500 }}
+
         bordered
         pagination={false}
         loading={false}

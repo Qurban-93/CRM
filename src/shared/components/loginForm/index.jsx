@@ -1,6 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { LoadingOutlined, EyeOutlined } from '@ant-design/icons';
-import { useLoginMutation } from "../../../redux/api/authApi";
+import { useLoginMutation } from "@/redux/api/authApi";
 import { useNotification } from '../notification';
 import * as Yup from 'yup';
 import "./index.scss";

@@ -1,7 +1,7 @@
 import { Drawer, Skeleton } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
-import { setViewModal } from '../../../../../redux/features/modals/modalsSlice';
-import { useGetRaportByIdQuery } from '../../../../../redux/api/raportApi';
+import { setViewModal } from '@/redux/features/modals/modalsSlice';
+import { useGetRaportByIdQuery } from '@/redux/api/raportApi';
 import './index.scss';
 
 

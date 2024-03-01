@@ -1,8 +1,8 @@
 import { Drawer, Space, Select, Input, Form, Button } from 'antd';
-import { useGetAllProjectsQuery } from '../../../../../redux/api/projectsApi';
-import { useGetUserByIdQuery } from '../../../../../redux/api/userApi';
+import { useGetAllProjectsQuery } from '@/redux/api/projectsApi';
+import { useGetUserByIdQuery } from '@/redux/api/userApi';
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilterModal } from '../../../../../redux/features/modals/modalsSlice';
+import { setFilterModal } from '@/redux/features/modals/modalsSlice';
 import { useEffect, useState } from 'react';
 
 import './index.scss'
