@@ -27,6 +27,8 @@ export const UsersTable = () => {
 
     const totalPages = !isLoading ? Math.ceil(userData?.totalCount / take) : 1
 
+    console.log(role.name);
+
     const columns = [
         {
             title: 'First Name',
@@ -80,12 +82,23 @@ export const UsersTable = () => {
                         <div style={{ cursor: 'default' }} className='active-user-btn'>Active</div> :
                         <div style={{ cursor: 'default' }} className='deactive-user-btn'>No active</div>
                 }
-                if (object.role.name !== 'SuperAdmin' && object.role.name !== 'Head') {
-                    return object.isActive ?
-                        <div onClick={() => onChangeStatus(object)} className='active-user-btn'>Active</div> :
-                        <div onClick={() => onChangeStatus(object)} className='deactive-user-btn'>No active</div>
+
+                if (role.name === 'Admin') {
+                    if (object.role.name !== 'SuperAdmin' && object.role.name !== 'Head' && object.role.name !== 'Admin') {
+                        return object.isActive ?
+                            <div onClick={() => onChangeStatus(object)} className='active-user-btn'>Active</div> :
+                            <div onClick={() => onChangeStatus(object)} className='deactive-user-btn'>No active</div>
+                    } else {
+                        return <div style={{ cursor: 'default' }} className='active-user-btn'>Active</div>
+                    }
                 } else {
-                    return <div style={{ cursor: 'default' }} className='active-user-btn'>Active</div>
+                    if (object.role.name !== 'SuperAdmin' && object.role.name !== 'Head') {
+                        return object.isActive ?
+                            <div onClick={() => onChangeStatus(object)} className='active-user-btn'>Active</div> :
+                            <div onClick={() => onChangeStatus(object)} className='deactive-user-btn'>No active</div>
+                    } else {
+                        return <div style={{ cursor: 'default' }} className='active-user-btn'>Active</div>
+                    }
                 }
 
             }
@@ -101,25 +114,53 @@ export const UsersTable = () => {
                             onClick={() => { onSelectUser(object.id); dispatch(setViewModal(true)) }} />
                     </div>
                 }
-                if (object.role.name !== 'SuperAdmin' && object.role.name !== 'Head') {
-                    return <div className='setting-btns'>
-                        <EditOutlined
-                            className='edit-icon'
-                            onClick={() => { onSelectUser(object.id); dispatch(setEditModal(true)); }}
-                        />
-                        <UnlockOutlined
-                            className='reset-passowrd-icon'
-                            onClick={() => { setSelectedUserId(object.id); dispatch(setResetPasswordModal(true)) }}
-                        />
-                        <EyeOutlined
-                            className='view-icon'
-                            onClick={() => { onSelectUser(object.id); dispatch(setViewModal(true)) }} />
-                        <DeleteOutlined
-                            className='delete-icon'
-                            onClick={() => { onSelectUser(object.id), dispatch(setDeleteModal(true)) }}
-                        />
-                    </div>
+                if (role.name === 'Admin') {
+                    console.log('burdadi');
+                    if (object.role.name !== 'SuperAdmin' && object.role.name !== 'Head' && object.role.name !== 'Admin') {
+
+                        return <div className='setting-btns'>
+                            <EditOutlined
+                                className='edit-icon'
+                                onClick={() => { onSelectUser(object.id); dispatch(setEditModal(true)); }}
+                            />
+                            <UnlockOutlined
+                                className='reset-passowrd-icon'
+                                onClick={() => { setSelectedUserId(object.id); dispatch(setResetPasswordModal(true)) }}
+                            />
+                            <EyeOutlined
+                                className='view-icon'
+                                onClick={() => { onSelectUser(object.id); dispatch(setViewModal(true)) }} />
+                            <DeleteOutlined
+                                className='delete-icon'
+                                onClick={() => { onSelectUser(object.id), dispatch(setDeleteModal(true)) }}
+                            />
+                        </div>
+                    }
+                } else {
+                    if (object.role.name !== 'SuperAdmin' && object.role.name !== 'Head') {
+
+                        return <div className='setting-btns'>
+                            <EditOutlined
+                                className='edit-icon'
+                                onClick={() => { onSelectUser(object.id); dispatch(setEditModal(true)); }}
+                            />
+                            <UnlockOutlined
+                                className='reset-passowrd-icon'
+                                onClick={() => { setSelectedUserId(object.id); dispatch(setResetPasswordModal(true)) }}
+                            />
+                            <EyeOutlined
+                                className='view-icon'
+                                onClick={() => { onSelectUser(object.id); dispatch(setViewModal(true)) }} />
+                            <DeleteOutlined
+                                className='delete-icon'
+                                onClick={() => { onSelectUser(object.id), dispatch(setDeleteModal(true)) }}
+                            />
+                        </div>
+                    }
                 }
+
+
+
             }
         }
     ];
