@@ -72,6 +72,8 @@ export const EditModal = ({ selectedProjectId, setSelectedProjectId, openNotific
         setSelectedProjectId(null);
     }
 
+    console.log(project);
+
     return (
         <div>
 
@@ -121,7 +123,7 @@ export const EditModal = ({ selectedProjectId, setSelectedProjectId, openNotific
                             mode='multiple'
                         >
                             {usersData?.users.map((item, index) => (
-                                item.role.name === 'Employee' ?
+                                item.role.name === 'Employee' && !item.isDeleted ?
                                     <Option key={index} value={item.id}>{item.firstName + ' ' + item.lastName}</Option>
                                     : null
                             ))}
