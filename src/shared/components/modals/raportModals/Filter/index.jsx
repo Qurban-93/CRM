@@ -6,6 +6,7 @@ import { setFilterModal } from '@/redux/features/modals/modalsSlice';
 import { useEffect, useState } from 'react';
 
 import './index.scss'
+import { useGetAllUsersQuery } from 'redux/api/userApi';
 
 
 export const FilterModal = ({ setFilters }) => {
@@ -16,6 +17,7 @@ export const FilterModal = ({ setFilters }) => {
     const { modalsState } = useSelector(state => state.modalsSlice);
     const { isFilterModalOpen } = modalsState;
     const { data: userData } = useGetUserByIdQuery(user.profile.id);
+    const { data: usersData } = useGetAllUsersQuery();
     const { data: projectsData } = useGetAllProjectsQuery();
     const role = user.profile.role.name;
 
@@ -50,15 +52,22 @@ export const FilterModal = ({ setFilters }) => {
         dispatch(setFilterModal(false));
     }
 
+    console.log(userData);
+
     const onFinish = (value) => {
-        const fullName = value.fullName ? value.fullName.trim() : '';
         const startDate = value.startDate ? value.startDate : '';
         const endDate = value.endDate ? value.endDate : '';
-        let path = `&SearchByFullname=${fullName}&StartDate=${startDate}&EndDate=${endDate}`;
+        let path = `&StartDate=${startDate}&EndDate=${endDate}`;
 
-        if (value.projectId) {
+        if (value.projectIds) {
             value.projectId.forEach(element => {
                 path += `&ProjectIds=${element}`
+            });
+        }
+
+        if (value.userIds) {
+            value.userIds.forEach(element => {
+                path += `&UserIds=${element}`
             });
         }
 
@@ -83,10 +92,17 @@ export const FilterModal = ({ setFilters }) => {
                 onFinish={(value) => onFinish(value)}
             >
                 {role !== 'Employee' ? <Form.Item
-                    name="fullName"
-                    label='Full Name'
+                    name="userIds"
+                    label='Users'
                 >
-                    <Input placeholder='Full name enter' />
+                    <Select
+                        placeholder="Select Users"
+                        mode='multiple'
+                    >
+                        {usersData?.users.map((item, index) => (
+                            <Option key={index} value={item.id}>{item.firstName + ' ' + item.lastName}</Option>
+                        ))}
+                    </Select>
                 </Form.Item> : null}
                 <Form.Item
                     name="startDate"
@@ -101,7 +117,7 @@ export const FilterModal = ({ setFilters }) => {
                     <Input type='date' placeholder='End date enter' />
                 </Form.Item>
                 <Form.Item
-                    name="projectId"
+                    name="projectIds"
                     label='Projects'
                 >
                     <Select

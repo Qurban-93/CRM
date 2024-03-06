@@ -72,7 +72,7 @@ export const EditModal = ({ selectedProjectId, setSelectedProjectId, openNotific
         setSelectedProjectId(null);
     }
 
-    console.log(project);
+    console.log(project?.users);
 
     return (
         <div>
@@ -116,13 +116,13 @@ export const EditModal = ({ selectedProjectId, setSelectedProjectId, openNotific
                                 message: 'Minimum 1 user required!'
                             },
                         ]}
-                        initialValue={project.users.map(item => (item.id))}
+                        initialValue={project?.users.map(item => item.id)}
                     >
                         <Select
                             placeholder="Select users"
                             mode='multiple'
                         >
-                            {usersData?.users.map((item, index) => (
+                            {usersData?.users?.map((item, index) => (
                                 item.role.name === 'Employee' && !item.isDeleted ?
                                     <Option key={index} value={item.id}>{item.firstName + ' ' + item.lastName}</Option>
                                     : null

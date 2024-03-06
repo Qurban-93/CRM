@@ -27,10 +27,10 @@ export const ProjectView = ({ selectedProjectId }) => {
 
                 <>
                     <h2>Info </h2>
-                    <p>Name : {data.projectName}</p>
+                    <p>Name : {data?.projectName}</p>
                     <h3>Users</h3>
                     <ul>
-                        {data.users.map(item => (
+                        {data?.users.map(item => (
                             <li> {item.fullName}</li>))}
                     </ul>
                 </>}

@@ -159,7 +159,7 @@ export const RaportTable = () => {
 
     return (
         <>
-            <CreateFilterButtons title={'Raports list'} downloadExcelFile={downloadExcelFile} />
+            <CreateFilterButtons title={'Reports list'} downloadExcelFile={downloadExcelFile} />
             <CreateModal openNotificationWithIcon={openNotificationWithIcon} />
             <FilterModal setFilters={setFilters} />
             {table}
