@@ -52,7 +52,6 @@ export const FilterModal = ({ setFilters }) => {
         dispatch(setFilterModal(false));
     }
 
-    @(userData);
 
     const onFinish = (value) => {
         const startDate = value.startDate ? value.startDate : '';
