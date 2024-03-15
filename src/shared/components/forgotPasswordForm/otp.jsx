@@ -18,8 +18,6 @@ const Otp = ({ setStep, email }) => {
         return () => clearInterval(interval);
     }, [seconds])
 
-    console.log('render');
-
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
         const seconds = time % 60;

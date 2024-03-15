@@ -23,7 +23,6 @@ export const ProjectTable = () => {
         useGetAllProjectsQuery(filterValue + `&Skip=${take * (current - 1)}&Take=${take}`);
 
     const totalPages = !isLoading ? Math.ceil(data?.totalCount / take) : 1
-    console.log(data);
 
     const transformDataForTable = useMemo(() => {
         return data?.projects.map(item => ({

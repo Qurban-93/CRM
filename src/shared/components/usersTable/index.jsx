@@ -27,7 +27,6 @@ export const UsersTable = () => {
 
     const totalPages = !isLoading ? Math.ceil(userData?.totalCount / take) : 1
 
-    console.log(role.name);
 
     const columns = [
         {
@@ -115,7 +114,7 @@ export const UsersTable = () => {
                     </div>
                 }
                 if (role.name === 'Admin') {
-                    console.log('burdadi');
+
                     if (object.role.name !== 'SuperAdmin' && object.role.name !== 'Head' && object.role.name !== 'Admin') {
 
                         return <div className='setting-btns'>

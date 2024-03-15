@@ -51,7 +51,6 @@ export const EditModal = ({ selectedProjectId, setSelectedProjectId, openNotific
 
     const onFinish = async (values) => {
 
-        console.log(values);
         const data = { ...values, id: selectedProjectId };
 
         const resp = await editProject(data);
@@ -72,7 +71,6 @@ export const EditModal = ({ selectedProjectId, setSelectedProjectId, openNotific
         setSelectedProjectId(null);
     }
 
-    console.log(project?.users);
 
     return (
         <div>

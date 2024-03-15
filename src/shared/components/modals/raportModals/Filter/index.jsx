@@ -52,7 +52,7 @@ export const FilterModal = ({ setFilters }) => {
         dispatch(setFilterModal(false));
     }
 
-    console.log(userData);
+    @(userData);
 
     const onFinish = (value) => {
         const startDate = value.startDate ? value.startDate : '';
